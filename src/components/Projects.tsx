@@ -28,28 +28,38 @@ const Projects = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projectData.map((proj, index) => (
-            <div key={index} className="bg-slate-900 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-zju-blue mb-2">
-                {proj.title}
-              </h3>
-              <p className="mb-4 h-16">{proj.description}</p>{' '}
-              {/* h-16 用于大致对齐高度 */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {proj.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                    {tag}
-                  </span>
-                ))}
+            // V 使用 flex 和 flex-col 让卡片成为一个flex容器
+            <div
+              key={index}
+              className="bg-slate-900 p-6 rounded-lg shadow-lg flex flex-col">
+              {/* 描述部分 */}
+              <div>
+                <h3 className="text-xl font-bold text-zju-blue mb-2">
+                  {proj.title}
+                </h3>
+                {/* 这里不再有 h-16 */}
+                <p className="mb-4 text-gray-400">{proj.description}</p>
               </div>
-              <a
-                href={proj.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold text-white hover:text-zju-blue transition-colors">
-                查看代码 &rarr;
-              </a>
+
+              {/* V 链接和标签部分，mt-auto 会把它推到卡片底部 */}
+              <div className="mt-auto">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {proj.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={proj.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-white hover:text-zju-blue transition-colors duration-300 inline-block">
+                  查看代码 &rarr;
+                </a>
+              </div>
             </div>
           ))}
         </div>
