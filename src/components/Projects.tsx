@@ -12,7 +12,7 @@ const projectData = [
   {
     title: '基于YOLO的飞镖得分识别系统',
     description:
-      '熟悉yolo基本原理与重要的密集检测特性; 对于v5的anchor机制和v8的anchor-free机制对比探究。最终使用Yolov11n来识别识别人为定义的四个校准点以及飞镖点从而对板面建模计算得分。',
+      '熟悉yolo基本原理与重要的密集检测特性; 对于v5的anchor机制和v8的anchor-free机制对比探究。最终使用Yolov11n来识别人为定义的四个校准点以及飞镖点从而对板面建模计算得分。',
     tags: ['计算机视觉', 'YOLO', '目标检测'],
     githubLink: 'https://github.com/SeeYouLaterPromise/dart-score-ai',
   },
